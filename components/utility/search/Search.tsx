@@ -1,16 +1,29 @@
+import { useState } from 'react';
+
 export interface ISearch {
   sampleTextProp: string;
 }
 
 const Search: React.FC<ISearch> = ({ sampleTextProp }) => {
+  const [searchTerm, setSearchTerm] = useState<string>();
   return (
     <div className="mx-auto flex min-h-screen max-w-screen-sm items-center justify-center">
       <div className="h-36 w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
         <div className="flex h-full w-full items-center justify-center bg-gray-800 back">
-          <form className="flex flex-row justify-center">
+          <form
+            className="flex flex-row justify-center"
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert(searchTerm);
+            }}
+          >
             <input
               type="text"
               className="border-2 w-5/6 sm:w-96 h-12 px-6 ml-2 rounded-l-lg"
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
             />
             <div className="space-x-3">
               <button
