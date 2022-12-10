@@ -1,17 +1,24 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {}
 
 const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/contact', '/contact', { shallow: true });
+  };
+
   return (
     <footer
       {...footerProps}
       className={`w-full p-5 bg-zinc-800 text-slate-300 ${className}`}
     >
       <div className="space-x-5 m-5">
-        <Link href="/" className="hover:underline">
+        <button onClick={handleClick} className="hover:underline">
           Contact Us
-        </Link>
+        </button>
       </div>
     </footer>
   );

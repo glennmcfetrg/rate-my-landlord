@@ -5,9 +5,9 @@ export interface ISearch {}
 const Search: React.FC<ISearch> = () => {
   const [searchTerm, setSearchTerm] = useState<string>();
   return (
-    <div className="mx-auto flex max-w-screen-sm items-center justify-center">
-      <div className="h-36 w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
-        <div className="flex h-full w-full items-center justify-center bg-zinc-800 back">
+    <div className="mx-auto flex max-w-screen-sm">
+      <div className="h-28 w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+        <div className="flex h-full w-full rounded-md items-center justify-center bg-zinc-800 back">
           <form
             className="flex flex-row justify-center"
             onSubmit={(e) => {
