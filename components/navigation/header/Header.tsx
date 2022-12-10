@@ -18,7 +18,7 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
         <Link href="/" className="hover:underline hidden sm:inline">
           Images
         </Link>
-        <button className="btn-primary text-black">Sign In</button>
+        <button className="btn-primary">Sign In</button>
       </div>
     </header>
   );
