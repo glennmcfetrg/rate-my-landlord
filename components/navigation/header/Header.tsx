@@ -9,7 +9,7 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
       className={`w-full flex flex-row justify-end ${className} bg-zinc-800 text-slate-300`}
     >
       <div className="space-x-5 m-2">
-        <Link href="/" className="hover:underline hidden sm:inline">
+        <Link href="/" className="hover:underline">
           About
         </Link>
         <Link href="/" className="hover:underline hidden sm:inline">
