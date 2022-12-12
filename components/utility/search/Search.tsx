@@ -1,23 +1,25 @@
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export interface ISearch {}
 
 const Search: React.FC<ISearch> = () => {
-  const [searchTerm, setSearchTerm] = useState<string>();
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState<string>('');
   return (
-    <div className="mx-auto flex max-w-screen-sm">
+    <div className="mx-auto flex max-w-screen-md">
       <div className="h-28 w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
         <div className="flex h-full w-full rounded-md items-center justify-center bg-zinc-800 back">
           <form
             className="flex flex-row justify-center"
             onSubmit={(e) => {
               e.preventDefault();
-              alert(searchTerm);
+              router.push(`/results?search=${searchTerm}`);
             }}
           >
             <input
               type="text"
-              className="border border-black w-5/6 sm:w-96 h-12 px-6 ml-2 rounded-l-lg"
+              className="border border-black w-5/6 sm:w-128 h-12 px-6 ml-2 rounded-l-lg"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
