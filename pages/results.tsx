@@ -51,7 +51,7 @@ const Results: NextPageWithLayout<IResults> = ({ searchResults }) => {
             })}
           </div>
         ) : (
-          <p>No results found.</p>
+          <h5>No results found.</h5>
         )}
       </section>
     </>

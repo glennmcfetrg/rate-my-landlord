@@ -5,7 +5,7 @@ const About: NextPageWithLayout = () => {
   return (
     <section>
       <h1>About</h1>
-      <p>TBC</p>
+      <h2>TBC</h2>
     </section>
   );
 };

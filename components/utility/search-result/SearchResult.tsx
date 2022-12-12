@@ -21,10 +21,10 @@ const SearchResult: React.FC<ISearchResult> = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p>{url}</p>
+        <h5>{url}</h5>
         <p className="text-blue-600 text-xl ">{title}</p>
       </Link>
-      <p>{text}</p>
+      <h5>{text}</h5>
     </div>
   );
 };
