@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export interface IContactCard {}
 
@@ -8,6 +8,10 @@ const ContactCard: React.FC<IContactCard> = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [messageError, setMessageError] = useState('');
+
   const handleSubmit = (event: React.FormEvent) => {
     // prevent the default form submission behavior
     event.preventDefault();
@@ -16,6 +20,15 @@ const ContactCard: React.FC<IContactCard> = () => {
     setName('');
     setEmail('');
     setMessage('');
+    if (!name) {
+      setNameError('Please enter your name');
+    }
+    if (!email) {
+      setEmailError('Please enter your email');
+    }
+    if (!message) {
+      setMessageError('Please enter a message');
+    }
   };
   return (
     <form
@@ -23,6 +36,9 @@ const ContactCard: React.FC<IContactCard> = () => {
       onSubmit={handleSubmit}
     >
       <div className="mb-4">
+        {nameError && (
+          <p className="text-red-500 text-xs italic">{nameError}</p>
+        )}
         <label
           className="block text-slate-300 text-sm font-bold mb-2"
           htmlFor="name"
@@ -39,6 +55,9 @@ const ContactCard: React.FC<IContactCard> = () => {
           required
         />
       </div>
+      {emailError && (
+        <p className="text-red-500 text-xs italic">{emailError}</p>
+      )}
       <div className="mb-4">
         <label
           className="block text-slate-300 text-sm font-bold mb-2"
@@ -56,6 +75,9 @@ const ContactCard: React.FC<IContactCard> = () => {
           required
         />
       </div>
+      {messageError && (
+        <p className="text-red-500 text-xs italic">{messageError}</p>
+      )}
       <div className="mb-4">
         <label
           className="block text-slate-300 text-sm font-bold mb-2"

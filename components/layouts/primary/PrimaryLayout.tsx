@@ -16,7 +16,10 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
       <Head>
         <title>RateMyLandlord</title>
       </Head>
-      <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
+      <div
+        {...divProps}
+        className={`min-h-screen flex flex-col ${justify} bg-zinc-800 text-slate-300`}
+      >
         <Header />
         <main className="px-5">{children}</main>
         <div className="m-auto" />
