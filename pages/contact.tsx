@@ -1,4 +1,4 @@
-import ContactCard from '../components/cards/contact/ContactCard';
+import ContactCard from '../components/forms/contact/ContactCard';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 

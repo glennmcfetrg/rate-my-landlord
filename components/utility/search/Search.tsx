@@ -28,7 +28,7 @@ const Search: React.FC<ISearch> = () => {
             <div className="space-x-3">
               <button
                 type="submit"
-                className="border border-black text-black h-12 px-6 mr-2 rounded-r-lg bg-gradient-to-r from-yellow-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500"
+                className="border border-black text-white h-12 px-6 mr-2 rounded-r-lg bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] hover:from-[#ff00c6] hover:via-[#ff5478] hover:to-[#ff8a05]"
               >
                 Search
               </button>

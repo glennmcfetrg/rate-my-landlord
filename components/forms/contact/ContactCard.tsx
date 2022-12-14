@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 export interface IContactCard {}
 
 const ContactCard: React.FC<IContactCard> = () => {
-  // use state hooks to manage the form values
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -13,7 +12,6 @@ const ContactCard: React.FC<IContactCard> = () => {
   const [messageError, setMessageError] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
-    // prevent the default form submission behavior
     event.preventDefault();
     // TODO: submit the form values to your backend
     // reset the form values
@@ -29,10 +27,11 @@ const ContactCard: React.FC<IContactCard> = () => {
     if (!message) {
       setMessageError('Please enter a message');
     }
+    alert(name + ', ' + email + ', ' + message);
   };
   return (
     <form
-      className="w-full max-w-sm bg-zinc-800 text-slate-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="w-screen max-w-sm bg-zinc-800 text-slate-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
       onSubmit={handleSubmit}
     >
       <div className="mb-4">
